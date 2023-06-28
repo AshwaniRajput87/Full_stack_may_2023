@@ -19,9 +19,7 @@
  *    - ES6 feature, that allows an iterable(like an array) to be expanded 
  *      into individual elements.
  *    - (...)followed by iterable expressions(an array or an array of objects)
- *   
- *   Call by value and call by reference in JS?
- *     - During your function call is your value get modified or not?
+ *  
  */
 
 // Calculate the area of a rectangle.
