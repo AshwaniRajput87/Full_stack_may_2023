@@ -3,11 +3,6 @@
  *    function.apply(context, [arg1, arg2, ...,argN]);
  *    let fn = function.bind(context, arg1, arg2, ...,argN)
  *    fn(object, arguments);
- * 
- * 
- * 
- * 
- * 
  */
 
 Function.prototype.myCall = function(context, ...args) {
@@ -17,13 +12,25 @@ Function.prototype.myCall = function(context, ...args) {
 
     while(currentContext[randomProp] !== undefined) {
         randomProp = Math.random();
-    }
+    }/*highly possibility to go infinite loop: becaue Since Math.random() 
+    returns a decimal number between 0 and 1, 
+    the probability of generating the same number again in the next 
+    iteration is high. As a result, the loop will continue indefinite.
+    */
+
+    // Will remove this logic and update with new one later.
+
+    /**
+     *  What could be the possible solutions to fix above problem? will discuss later
+     *     
+     */
 
     currentContext[randomProp] = this;
 
     let result = currentContext[randomProp](...args);
 
-    delete currentContext[randomProp];
+    delete currentContext[randomProp]; /*removing the property with the dynamically generated name (randomProp) 
+                                        from the currentContext object. */
 
     return result;
 }

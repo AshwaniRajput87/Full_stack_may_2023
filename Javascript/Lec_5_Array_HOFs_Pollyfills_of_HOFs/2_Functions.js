@@ -2,7 +2,7 @@
  *   What is function ?
  *     - A reusable piece of code that performs some specific task.
  * 
- *   What do you by function as an object?
+ *   What do you mean by function as an object?
  * 
  *     - In Javascript, functions are objects that can be assigned in a variable, 
  *       can pass as an arguments to other function and can store functions 
@@ -26,11 +26,11 @@
  *           return {lacs, value}
  *       }
  *       console.log(computeAmount().value()) //0
- *        console.log(computeAmount().lacs(2).value()) //2,00,000 
- *        console.log(computeAmount().lacs(2).lacs(20).value())//22,00,000 
+ *       console.log(computeAmount().lacs(2).value()) //2,00,000 
+ *       console.log(computeAmount().lacs(2).lacs(20).value())//22,00,000 
  */
 
-/***
+/**
  *  Types of functions in JS:
  *  
  *   1. named function: A function that has a name.
