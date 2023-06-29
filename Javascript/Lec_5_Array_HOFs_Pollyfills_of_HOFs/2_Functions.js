@@ -63,8 +63,8 @@ greetMsg();
 //     console.log('Hello Ashwani');
 // }
 
-//3. Function Expression
 
+//3. Function Expression
 const greet = function() { 
     console.log('Hello Sunil');
 }
