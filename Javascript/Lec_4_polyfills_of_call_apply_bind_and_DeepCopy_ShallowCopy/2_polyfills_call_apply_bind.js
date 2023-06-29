@@ -6,21 +6,20 @@
  */
 
 Function.prototype.myCall = function(context, ...args) {
-    let currentContext = context || globalThis; /** if no object will be passed or if it will be passed as null, 
-    then fallback will be on globalThis which means window object. */
+    let currentContext = context || globalThis; /** if no object will be passed or 
+    if it will be passed as null, then fallback will be on globalThis which means window object. */
 
     let randomProp = Math.random(); // to generate a unique property and contains a unique value b/w 0 to 1
 
     while(currentContext[randomProp] !== undefined) {
         randomProp = Math.random();
-    }/* there is highly possibility to go infinite loop: becaue Since Math.random() 
+    }/* there is highly possibility to go infinite loop: because Since Math.random() 
     returns a decimal number between 0 and 1, 
     the probability of generating the same number again in the next 
-    iteration is high. As a result, the loop will continue indefinite.
+    iteration is high. As a result, the loop will continue infinite.
     */
 
     // Will remove this logic and update with new one later.
-
     /**
      *  What could be the possible solutions to fix above problem? will discuss later
      *   
@@ -29,19 +28,18 @@ Function.prototype.myCall = function(context, ...args) {
     currentContext[randomProp] = this; 
     /*  assigning the value of this to a property in the currentContext object 
         using the dynamically generated property name randomProp.
-    
+
         here, "this":  depending on how the function is called or 
         the context in which the code is used.*/
 
     let result = currentContext[randomProp](...args); /** 
-     currentContext[randomProp]: this will contain what? value stored in currentContext[randomProp] is a function.
-     here, I am invoking the function by passing neccessary arguments (...args).
+    currentContext[randomProp]: this will contain what? value stored in currentContext[randomProp] is a function.
+    here, I am invoking the function by passing neccessary arguments (...args).
     */
 
-    delete currentContext[randomProp]; /* removing the property with the dynamically generated name (randomProp) 
-       from the currentContext object. */
+    delete currentContext[randomProp]; /* removing the property with the dynamically   generated name (randomProp) from the currentContext object. */
 
-    return result;
+    return result;
 }
 
 function showPersonDetails(city, country) {
