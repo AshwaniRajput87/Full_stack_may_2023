@@ -41,7 +41,7 @@
  *          When a function is immediately exceuted after it is defined is known as IIFE.
  *          need not to explicity called the function, it's executed automatically onload of script.
  *   6. Recursive function: Functions that call themselves util a base condition is met.
- *   7. callback: When a unction is passed aa an argument to another function and 
+ *   7. callback: When a function is passed as an argument to another function and 
  *      invoked at later point in time
  *   8. Higher Order function: A function that accepts other functions as arguments or returns a function itself.
  *      - Map

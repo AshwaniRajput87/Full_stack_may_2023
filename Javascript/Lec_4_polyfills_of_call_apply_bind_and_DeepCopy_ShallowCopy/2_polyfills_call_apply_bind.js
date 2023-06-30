@@ -87,13 +87,13 @@ showPersonDetails.myApply(person2, ["Delhi", "India"]);
 Function.prototype.myBind = function(context, ...args) { //["Bombay", "India"]
     const callback = this;
 
-    return function(...innerArgs) { // fn('data', 'greetMsg');==> innerArgs represents ('data', 'greetMsg')
-                                    // ...innerArgs = ['data', 'greetMsg'] 
+    return function(...innerArgs) { // fn('data', 'greet msg');==> innerArgs represents ('data', 'greet msg')
+                                    // ...innerArgs = ['data', 'greet msg'] 
         return callback.apply(context, args.concat(innerArgs));
     }
 }
 
-function showPersonDetails(city, country) {
+function showPersonDetails(city, country, developer) {
     console.log(`${this.firstName} ${this.lastName}, ${city} - ${country}`);
 }
 
@@ -104,7 +104,7 @@ const person3 = {
 
 let fn = showPersonDetails.myBind(person3, "Bombay", "India");
 
-fn();
+fn('data', 'greet msg');
 
 
 
