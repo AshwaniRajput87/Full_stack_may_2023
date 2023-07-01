@@ -37,7 +37,7 @@ Function.prototype.myCall = function(context, ...args) {
     here, I am invoking the function by passing neccessary arguments (...args).
     */
 
-    delete currentContext[randomProp]; /* removing the property with the dynamically   generated name (randomProp) from the currentContext object. */
+    delete currentContext[randomProp]; /* removing the property with the dynamically generated name (randomProp) from the currentContext object. */
 
     return result;
 }
