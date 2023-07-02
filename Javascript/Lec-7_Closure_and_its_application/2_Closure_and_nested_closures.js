@@ -38,7 +38,8 @@ console.log(c1()); // c1 -> (init = 20, delta = 5)
 console.log(c2()); // c2 -> (init = 9, delta = 2 )
 
 /***
- * Nested closure
+ * Nested closure -> you will get access to outer variable
+ * even if the outer function is not the direct parent.
  */
 
 let iamGEC = 200;
