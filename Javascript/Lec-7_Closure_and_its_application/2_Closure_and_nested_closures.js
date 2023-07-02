@@ -65,7 +65,7 @@ lsNameRtn();
  *
  *  Every code is executed in EC:
  *   1. this
- *   2. local function & its var
+ *   2. local function & its variables
  *   3. globalThis, window obj,
  *   4. Lexical scope
  *   5. Closure -> till GEC
@@ -74,37 +74,44 @@ lsNameRtn();
 /**
  * Closure vs block scope
  */
-
+//Example-1
 // function outer() {
 //   let arrFn = [];
-//   for (var i = 0; i < 3; i++) {
+//   for (var i = 0; i < 3; i++) { i has become 3 come out of the loop
 //     arrFn.push(function fn() {
 //       // storing the functions into an array arrFn
-//       i++; // 0 1 2
-//       console.log(i); // 1 2 3
-//     });
+//       i++;
+//       console.log(i);
 //   }
 //   return arrFn;
 // }
 // let arrFn = outer();
-// arrFn[0](); // invoking the first function in the array of arrFn  4
-// arrFn[1](); // invoking the second function in the array of arrFn 5
-// arrFn[2](); // // invoking the third  function in the array of arrFn 6
+// arrFn[0](); // invoking the first function in the array of arrFn  i=3+1 = 4
+// arrFn[1](); // invoking the second function in the array of arrFn i=4+1 = 5
+// arrFn[2](); // // invoking the third  function in the array of arrFn i=5+1 = 6
 
+//Example-2
 function outer() {
+  // arrFn has block scope refers to -> function outer
   let arrFn = [];
   for (let i = 0; i < 3; i++) {
     arrFn.push(function fn() {
+      // storing the functions into an array arrFn
+
       /* fn is getting different values of i because 
-        here block scope is different in each iteration*/ // storing the functions into an array arrFn
-      // arrFn has block scope refers to -> functions
+        here block scope is different in each iteration*/
       i++;
-      console.log(i); //i=1, 2, 3
+      console.log(i);
     });
   }
   return arrFn;
 }
 let arrFn = outer();
-arrFn[0](); // invoking the first function in the array of arrFn
-arrFn[1](); // invoking the second function in the array of arrFn
-arrFn[2](); // // invoking the third  function in the array of arrFn
+arrFn[0](); // invoking the first function in the array of arrFn -> 1
+arrFn[1](); // invoking the second function in the array of arrFn -> 2
+arrFn[2](); // // invoking the third  function in the array of arrFn -> 3
+
+// irrespective of order of function stored in stack the value i would be:
+//arrFn[2]() -> 1
+//arrFn[1]() -> 2
+//arrFn[0]() -> 3
