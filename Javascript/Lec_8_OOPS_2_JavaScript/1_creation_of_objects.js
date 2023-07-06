@@ -289,8 +289,17 @@ console.log(superHuman);
  *  prototypal inheritance: you inherit properties and methods
  *   from the parent object or proptotype object.
  *
- *  prototype chaining: allows objects to inherit properties and methods
- *     from other objects via prototype chaining
+ *  prototype chaining:
+ *     - In JavaScript, every object has an internal link
+ *       to another object called its prototype.
+ *
+ *     - When you access a property or method on an object,
+ *       JavaScript looks for that property or method on the object itself,
+ *       if that is not found in that object then it will go
+ *       till it's prototype object(parent).
+ *
+ *
+ *
  *
  *  __proto__: an object to access parent object properties and methods
  */
