@@ -298,10 +298,7 @@ console.log(superHuman);
  *       if that is not found in that object then it will go
  *       till it's prototype object(parent).
  *
- *
- *
- *
- *  __proto__: an object to access parent object properties and methods
+ *  __proto__: an object to access parent object properties and methods.
  */
 
 let object = { name: "Ashwani" };
