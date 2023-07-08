@@ -36,10 +36,11 @@ const memoize = (fn) => {
   };
 };
 
+const efficientCalcFN = memoize(calc);
 console.time();
-console.log(memoize(calc(10000)));
+console.log(efficientCalcFN(10000));
 console.timeEnd();
 
 console.time();
-console.log(memoize(calc(10000)));
+console.log(efficientCalcFN(10000));
 console.timeEnd();
