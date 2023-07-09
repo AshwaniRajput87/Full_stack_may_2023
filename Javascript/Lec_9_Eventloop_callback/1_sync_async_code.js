@@ -25,8 +25,6 @@
  *       a non-blocking code, that allows multiple tasks
  *       to run simultaneously without waiting for
  *       each task to finish before moving on to the next one.
- *
- *
  */
 
 console.log("Before");
@@ -49,7 +47,8 @@ console.log("After");
 
 /***
  *  Environment: Browser
- *     Web API/ Browser API:
+ *     Web API/ Browser API:  provides the features (setTimout, fetch, DOM, eventListeners etc)
+ *                            for doing things concurrently in the browser.
  *     console -> is not part of JS
  *     window -> is not part of JS
  *     document -> is not part of JS
@@ -75,7 +74,6 @@ console.log("After");
  *
  *   Inference -> you cannot create
  *        an asynchronous functions as a programmer -> Environment -> Browser
- *
  *
  */
 
