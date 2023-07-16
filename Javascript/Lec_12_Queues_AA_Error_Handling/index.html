@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        Tasks, Microtasks, Callstack, UI Renders / Async&await / Error Handling
+    </h1>
+</body>
+
+  <dl>
+      <dt>1.Synchronous code</dt>
+      <dd> always get highest priority</dd>
+
+      <dt>2. Asynchronous code</dt>
+      <dd> 2.1. Callback  queue/ Task Queue: cbs of web API are enqueued from asynchronous based fn(setTimeout, setInterval, fetch) and event listeners (DOM events listeners) </dd>
+      <dd> 2.2. Animation Frame Queue: requestAnimationframe() -> helps you to execute JS just before rendering on the DOM</dd>
+      <dd> 2.3. Microtasks Queue: callbacks of promises are enqueued </dd>
+  </dl>
+  <script>
+    // synchronous code will get always highest priority
+    console.log('A sync code');
+
+    // CQ(Callback Queue) and Animation frame queue can have equivalent priority based on event loop to get the priority between both (CQ and AFQ)
+    requestAnimationFrame(() => {
+        console.log('B request animation frame');
+    });
+
+    setTimeout(() => {
+        console.log('C callback queue/ task queue');
+    }, 0);
+
+    // microtasks will get second highest priority
+    queueMicrotask(() => {
+        console.log('D microtask queue');
+    });
+
+    Promise.resolve().then(() => {
+        console.log('E microtask queue');
+    }).then(() => {
+        console.log('F microtask queue');
+    });
+
+    // synchronous code will get always highest priority
+    console.log('G sync code');
+
+    //Imp Note: sync code > Microtask queue > Callback queue ~= Animation frame queue
+
+</script>
+</html>
