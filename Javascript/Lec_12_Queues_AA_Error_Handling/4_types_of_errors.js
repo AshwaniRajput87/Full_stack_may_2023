@@ -2,22 +2,25 @@
  * Inbuilt-types of errors in JS:
  * 
  *    1. Syntax error: means syntax violation in the code
+ *       
+ *       //try catch only works with runtime errors
  *    2. Runtime error: only get to know the error after executing the code 
- *       and it will fail the point where you have made the error/mistake
- *    3. Type Error: occurs when an operation is performed on a value of an unexpected type
- *    4. Reference Error: Occurs when an invalid reference is made 
- *                        to an undeclared or inaccessible variable, function, or object.
- *    5. Range Error: occurs when a numeric value is out of allowable value.
- *    6. URI error: Will take during encoding and decoding of the URI in Manchine coding.
- *                  But it occurs when encoding or decoding functions  encounter invalid URIs
+ *                      and it will fail the point where you have made the error/mistake.
+ *       2.1. Type Error: occurs when an operation is performed on a value of an unexpected type.
+ *       2.2. Reference Error: Occurs when an invalid reference is made 
+ *                             to an undeclared or inaccessible variable, function, or object.
+ *       2.3. Range Error: occurs when a numeric value is out of allowable value.
+ *       2.4. URI error: occurs when encoding or decoding functions  encounter invalid URIs or its usage.
+ *                       Will take this error during encoding and decoding of the URI in Machine coding.
  */
+
+const { Console } = require("console");
 
 
 /**
  * syntax error: means syntax violation in the code
  */
-
-console.log('Hi');
+Console.log('Hi');
 // le a; // SyntaxError: Unexpected identifier 'a'
 // let a;
 
