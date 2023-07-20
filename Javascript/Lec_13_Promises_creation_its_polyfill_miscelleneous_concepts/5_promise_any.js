@@ -1,8 +1,13 @@
 /**
  * 
- *  any(): returns promise fullfills when any of the input's promises fufills, with this first fullfills or 
- *         rejects when all of the input's promises rejects
- * 
+ *  any(): Takes an array of promises and returns a new promise
+ *         that fulfills as soon as any input promise fulfills. 
+ *       
+ *         If all promises are rejected, the resulting promise is rejected with an AggregateError 
+ *         containing all the rejection reasons.
+ *
+ *         Useful for handling multiple asynchronous operations and responding to the first successful 
+ *         completion.
  */
 
 

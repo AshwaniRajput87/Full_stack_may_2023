@@ -3,7 +3,7 @@
  *       1. nested callbacks -> callback hell problem.
  *       2. Inversion of control(Trust issue)
  *          // cb based on async fn -> cb to third party library functions ->
- *            async fn your cb multiple times.
+ *            async fn calls your cb multiple times.
  *    
  *     Promises were introduced to solve above problems:
  *       Inversion of control: 
@@ -17,8 +17,10 @@ const fs = require('fs');
 //let promise = fs.promises.readFile('f1.txt'); // every promise can be resolved or rejected.
 // console.log(promise);
 
-// then -> then is an event listener (handler) for a promise 
-// when promise state changes to resolve
+/* then -> then is an event listener (handler) for a promise 
+ *         when promise state changes to resolve
+ */
+
 // promise.then((data) => {
 //     console.log('Data inside file is: ' + data);
 // });
@@ -60,9 +62,8 @@ const fs = require('fs');
 // });
 
 /**
- * 
  *  promise is an object: 
- *   1. value: 1.1 undefined or 1.2 the value you have passed/ read with respect to state changes/ value to be here
+ *   1. value: 1.1 undefined or 1.2 the value you have passed/read with respect to state changes or value to be present here
  *   2. state: pending and fullfilled (resolved and rejected)
  */
 
