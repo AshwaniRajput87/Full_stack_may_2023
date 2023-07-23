@@ -86,7 +86,27 @@ const sym1 = Symbol("one");
 const sym2 = Symbol("one");
 const sym3 = Symbol.for("two");
 const sym4 = Symbol.for("two");
-console.log(sym1 === sym2, sym3 === sym4);
+console.log(sym1 === sym2, sym3 === sym4); // false true
+
+/***
+ *  Symbol("one"):  
+ *     - creates a new unique symbol each time it is called. 
+ *     - unique symbol instance that cannot be shared or accessed elsewhere.
+ *  Symbol.for("two"):
+ *     - creates a global symbol that is registered in a global symbol registry. 
+ *     - If a symbol with the given key (in this case, 'two') already exists in the registry, it will be returned; 
+ *       otherwise, a new symbol will be created and added to the registry.
+ * 
+ *   That's why:
+ *     const sym1 = Symbol("one");
+ *     const sym2 = Symbol("one"); both will create unique instance and can not be shared or accesses elsewhere.
+ *        - so if you do sym1 === sym2 // false
+ *     const sym3 = Symbol.for("two");
+ *     const sym4 = Symbol.for("two");// creates a global symbol that is registered in a global symbol registry and 
+ *                                       second time two already exists in global symbol registry then it will be returned.
+ *        -so if you do sym3 === sym3 // true   
+ */
+
 
 
 
