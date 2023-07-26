@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding on Browser Environment and DOM</title>
+</head>
+<body>
+    <h1 class="first">Hi I am H1 element</h1>
+    <h1 id="second">Hi i am another h1 element</h1>
+    <div>
+        <p>Hello i am para 1</p>
+        <p>Hello i am another para 2</p>
+    </div>
+
+    <h2>
+        Hi I am heading 2
+    </h2>
+    <button>
+        click me
+    </button>
+      
+</body>
+<script>
+//    /*
+//     *  what is browser?
+//     *     - Software application that allows user to access and display 
+//     *       information available on internet.
+//     * 
+//     *  What is browser environment?
+//     *    - It's a runtime environment provided by browsers to excecute the 
+//     *      javascript code within the webpage.
+//     * 
+//     *    - consists of various components and APIs that allow developers to interact with the user interface, 
+//     *      manipulate the DOM, handling the events and access browser specific functionalities.
+//     * 
+//     *    - Component in Browser Env?
+//     *        - refers to core building blocks of browser env.
+//     *        - includes -> DOM, JS Engine, Rendering Engine, Network communication, Web APIs, Browser Security, User Interface, 
+//     *                      History and Navigation.
+//     *   - APIs (Application Programming Interfaces)
+//     *        - Provided by the browsers to allow developers to interact with and control the browser environment programmitically.
+//     *        - Browser APIs exposing the objects and methods to web developers so that you can use in
+//     *          the JS code to perform and access browser specific functionalities.
+//     *        - includes -> DOM APIs, Fetch API, Web storage API(localStrorage, session storage), Cookies, Geolocation API, Web Wrokers API
+//     * 
+//     *   - DOM API
+//     *      - What is DOM?
+//     *        - Document               Object                  Model -> Represents the tree structure of a web page.
+//     *     (1_BrowserEnv_DOM.html)  (tags/elements)          (Structured) 
+//     *      - DOM API enables the JS to interact with and modify the content of a web page.
+//     * 
+//     *      -  document?
+//     *           - It's a global object that represents the HTML document loaded on a web browser.
+//     * 
+//     *     -  #document
+//     *          - represents the root node of an HTML document.
+//     *     
+//     *     - CRUD operation in DOM -> C(Create/Write)    R(Read)    U(Update)     D(Delete)
+//     *
+//     * 
+//     */
+
+//console.log('Hello Ashwani');
+
+
+
+//READ
+//   const h1Element = document.querySelector('h1');
+//   console.log(h1Element);
+
+    // const allH1Elements = document.querySelectorAll('h1');
+    // console.log(allH1Elements);
+
+// const classSelectorElem = document.querySelector('.first');
+// console.log(classSelectorElem);
+
+// const idSelectorElem = document.querySelector('#second');
+// console.log(idSelectorElem);
+
+// const idSelectorElem = document.getElementById('first');
+// console.log(idSelectorElem);
+
+// const classSelectorElem = document.getElementsByClassName('first');
+// console.log(classSelectorElem);
+
+
+
+//Write/ Create
+const h2Element = document.createElement('h2');
+const bodyElement = document.querySelector('body');
+h2Element.innerText = 'Hi i am another heading 2';
+// console.log(h2Element);
+
+
+
+//Update
+bodyElement.appendChild(h2Element);
+
+
+//Delete
+const h1Elem = document.querySelector('h1');
+h1Elem.remove();
+
+</script>
+</html>

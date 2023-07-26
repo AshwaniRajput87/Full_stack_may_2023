@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1 class="first-h1">Node Properties and Node List</h1> -->
+    <a href="#link" class="link">Click me</a>
+</body>
+
+<script>
+   
+//   /**
+//    *  Node Properties:
+//    *     - refers to the various attributes and characteristics with DOM Nodes.
+//    *     - DOM nodes refer -> represent elements, attributes and content in HTML document.
+//    *     - Each node type has some specific properties that provide the information of the node
+//    *       and allows the developers to access sand manipulate the content and behavior.
+//    * 
+//    *  What are node properties available?
+//    *    - element node properties:
+//    *        - nodeName: represents the name of node
+//    *        - nodeType: represents type of node that returns an integer value.
+//                                    (always 1 for element/tag nodes).
+//    *        - nodeValue: get and set the value to the node.
+//                             
+//    *    - attribute node properties:
+//              - element.getAttributeNode('h1').
+//              - nodeType: Returns an integer representing the node type
+//                               (always 2 for attribute nodes).
+//    *    - text node properties:
+//              - let textNode = linkElement.firstChild (firstChild or lastChild properties)
+//              - nodeType: Returns an integer representing the node type
+//                               (always 3 for text nodes).
+//          
+
+// const h1Element = document.querySelector('h1');
+
+// h1Element.innerText = '<strong>Hello</strong>';
+
+    // console.log(h1Element.nodeName);
+    // console.log(h1Element.nodeType);
+    // console.log(h1Element.nodeValue);
+    // console.log(h1Element.textContent);
+    // console.log(h1Element.className);
+
+    const linkElement = document.querySelector('.link');
+
+    const attrH1Elem = linkElement.getAttributeNode('href');
+
+     const attrClaasH1Elem = linkElement.getAttributeNode('class');
+     console.log(attrClaasH1Elem.nodeType);
+
+    // console.log(attrH1Elem);
+    // console.log(attrH1Elem.nodeName);
+    // console.log(attrH1Elem.nodeType);
+    // console.log(attrH1Elem.nodeValue);
+
+    // Text node properties:
+    // const textNode = linkElement.firstChild;
+    // console.log(textNode.nodeName);
+    // console.log(textNode.nodeType);
+    // console.log(textNode.nodeValue);
+    
+
+</script>
+</html>
