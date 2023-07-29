@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding of NodeList and HTMLCollection in DOM</title>
+</head>
+<body>
+
+    <p class="first">Hello I am para 1</p>
+
+    <ul>
+        <li>Item1</li>
+        <li>Item2</li>
+        <li>Item3</li>
+    </ul>
+
+    <p class="first">Hi i am para 2</p>
+</body>
+<script>
+    /**
+     * What is NodeList in DOM?
+     *    - A collection of DOM nodes returned by certain DOM methods 
+     *      when you select the elements from HTML document.
+     *    - querySelctorAll(tagName)
+     *    - A NodeList contains an array of elements, so it has a length property and can
+     *      be accessed via bracket notation(nodeList[index])
+     *    - used to access the group of elements.
+     * 
+    */
+   const liItems = document.querySelectorAll('ul, li, p');
+   //const liItems = document.querySelectorAll('li');
+   console.log(liItems);
+   console.log(liItems.length);
+   console.log(liItems[0]);
+   console.log(liItems[2]);
+
+
+   /**
+    *  What is HTMLCollection in DOM?
+    *      - A group of elements with same tag name, gathered using the certain DOM method 
+    *        when you select elements in HTML document.
+    *      - methods to use to get HTMLCollection, 1.) getElementsByTagName(tagName)
+    *                                              2.) getElementsByClassName(className)
+    *      - HTMLCollection also contains the same lists of elements.
+    * 
+   */
+
+  
+  //    const pClassElements = document.getElementsByClassName('first')
+  //     console.log(pClassElements);
+  //     console.log(pClassElements.length);
+  //     console.log(pClassElements[0]);
+   const pElements = document.getElementsByTagName('p');
+   console.log(pElements);
+   console.log(pElements.length);
+   console.log(pElements[0].textContent);
+</script>
+</html>

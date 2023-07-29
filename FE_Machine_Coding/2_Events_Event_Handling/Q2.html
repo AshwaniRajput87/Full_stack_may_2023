@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- //Q-2 Display entered text via input field -->
+    <!-- name of event for input field is "input" -->
+    <input type="text" name="tex-field" id="my-input">
+    <p id="displayText"></p>
+</body>
+<script>
+    const input = document.querySelector("#my-input");
+    const displayText = document.getElementById('displayText');
+     
+    input.addEventListener('input', () =>{
+       displayText.textContent = input.value;
+    });
+</script>
+
+</html>

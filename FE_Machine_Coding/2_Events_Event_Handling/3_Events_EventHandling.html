@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button onclick="handleClick()">Click me</button> -->
+    <button>Click me</button>
+    <!-- <p>Hello</p> -->
+</body>
+<script>
+    /***
+     * What is Event in DOM?
+     *   - It's just an action takes place within the web page
+     *   - Eg: when user click on the button of your web page, when a user reload the web page,
+     *         resizing the window is also an event.
+     * 
+     * 
+     * What is event Handling?
+     *    - So, as a developer we need to capture and handle 
+     *        those events using Javascript to respond to the user actions.
+     *    - So that you can provide the dynamic interaction to the users.
+     * 
+     * How many types of events available in DOM?
+     *    - Keyboard events:
+     *         - Events triggered via keyboard inputs, such key press and key release
+     *         - Name of events
+     *             1. keydown
+     *             2. keyup
+     *             3. keypress
+     *    - Mouse events:
+     *         - Events triggered via Mouse interactions, such clicking on a button, 
+     *             movement of your mouse or hovering via mouse on some buttons.
+     *         - Name of Mouse Events
+     *             - click
+     *             - dbclick
+     *             - mouseover
+     *             - mouseout
+     *             - mouseleave
+     *             - mousemove
+     *             - mousedown
+     *             - mouseup
+     * 
+     *  How to capture and handle the events in DOM?
+     *        - 2 ways to capture and handle events:
+     *              1.) Inline Event Handling
+     *                      - you can use 'on->with eventname' attribute directly 
+     *                        in the HTML elements to specify the event handlers
+     *              2.) DOM Event Listener Methods:
+     *                      - A modern and recommended approach to add event listeners to elements.
+     *                      - allows you to add multiple event listeners to the same element and provides you
+     *                        better control over the event handling.
+     *                      - element.addEventListener(eventname, listener, options)
+    */
+
+    const btn = document.querySelector('button');
+    
+    const handleClick = () => {
+        const p = document.createElement('p');
+        p.innerText = 'Hello';
+
+        const bodyElem = document.querySelector('body');
+        bodyElem.appendChild(p);
+        // remove event here
+        btn.removeEventListener('click', handleClick);
+    }
+
+    // btn.addEventListener('click', handleClick, {once: true});
+    btn.addEventListener('click', handleClick);
+
+    /*** 
+     * problem:
+     *    - when click on a click me button, it adding same text multiple times on my DOM. 
+     * 
+     * Solution:
+     *    - How to add the dynamic text single time on the DOM?
+     *       1.) btn.addEventListener('click', handleClick, {once: true}); with options in addEventListener()
+     *       2.) element.removeEventListener(eventname, listener, options)
+     * 
+    */
+</script>
+</html>

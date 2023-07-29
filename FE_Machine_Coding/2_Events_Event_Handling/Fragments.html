@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding of fragments</title>
+</head>
+<body>
+  <ul id="list"></ul>
+    
+</body>
+<script>
+    /****
+     * What is Fragments in DOM?
+     *   - A lightweight container that hold the groups of DOM nodes 
+     *       without adding them directly into the main document tree.
+     *   - Benefits:
+     *       - improves the web performance.
+     *   - we can use a method for creating fragments in DOM is:
+     *      - document.createDocumentFragment()
+    */
+    
+    const fragment  = document.createDocumentFragment();
+
+    for(let i = 0 ; i<100; i++){
+        const li = document.createElement('li')
+        li.textContent = `Item-${i+1}`
+        fragment.appendChild(li);
+    }
+    
+    document.querySelector('#list').appendChild(fragment);
+</script>
+</html>
