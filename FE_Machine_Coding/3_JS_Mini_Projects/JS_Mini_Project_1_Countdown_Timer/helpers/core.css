@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+html {
+  box-sizing: border-box;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 10px;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  top: 20px;
+  position: relative;
+}
+
+.btn.btn-primary {
+  padding: 10px 20px;
+  background-color: cyan;
+  border: 1px solid grey;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn.btn-primary.small {
+  padding: 4px 8px;
+}
+
+input:disabled,
+button:disabled,
+button.btn:disabled,
+.btn.btn-primary:disabled {
+  cursor: not-allowed;
+}
+
+.disabled {
+  color: grey;
+  cursor: not-allowed;
+}
