@@ -1,0 +1,49 @@
+<!--
+   What is custom event?
+    - user defined events that developers create to handle the specific situations or interactions in your web apps.
+    - Custom events provide you more flexibility, allowing developers to define your own events name 
+       and handle it easily via your custom event name wheersoever is needed.
+
+   How to create custom events?
+    1. create a custom event with help of CustomEvent constructor.
+        - 2 params required: event type(a string) and an optional object with additional information.
+    2. Dispatch the custom event
+        - with help of dispatchEvent() method to dispatch you custom event on a DOM element.
+    3. Listen your custom created events
+       - addEventListener() -> to attach any event with any DOM element.
+       - removeEventListner() -> to detach any event with any DOM element.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Custom Event</title>
+</head>
+<body>
+
+    <button id="btn">click me</button>
+    <script>
+
+        const customEvent = new CustomEvent('post', {
+            detail: {
+              message: 'This is your custom event!' 
+            }
+            
+        });
+
+        const button = document.getElementById('btn');
+        button.addEventListener('click',()=>{
+           document.dispatchEvent(customEvent);
+        })
+
+        document.addEventListener('post', (event)=>{
+            console.log(event);
+           alert(event.detail.message);
+        })
+
+    </script>
+</body>
+</html>

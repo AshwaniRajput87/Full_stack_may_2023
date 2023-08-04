@@ -1,0 +1,58 @@
+<!--
+   Event Delegation:
+    - Instead of attaching event listeners to individual elements you can use event delegation
+      by attaching a single  event listener on the common ancestor element.
+    
+    - then, use event.target.tagName property to identify the particular element.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation</title>
+</head>
+<body>
+    clicked body
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <div>
+        <!-- <div>
+            <div>
+                <div>
+                    <div>
+
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <script>
+    const list = document.getElementById('list');
+    list.addEventListener('click', (event)=>{
+
+    //event.stopPropagation();
+      console.log(event.target.tagName);
+      if(event.target.tagName === 'LI') {
+        console.log(event.target.textContent); 
+      }
+    });
+
+    const bodyElem = document.querySelector('body');
+    bodyElem.addEventListener('click', ()=> {
+        console.log('body is clicked');
+    });
+    </script>
+    
+</body>
+</html>

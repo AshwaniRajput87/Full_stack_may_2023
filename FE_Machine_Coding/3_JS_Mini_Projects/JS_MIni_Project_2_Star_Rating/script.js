@@ -58,9 +58,15 @@ class StarRating{
 
     fillStars(count) {
         console.log(count);
+
+        for (let i = 0; i < 5; i++){
+            this.stars[i].classList.remove('star-filled');
+        }
+
         for (let i = 0; i < count; i++) {
             this.stars[i].classList.add('star-filled');
         }
+
     }
 
     updateRatings(count) {
@@ -69,10 +75,14 @@ class StarRating{
 
     onStarMouseOver(event) {
         // console.log(event);
+        const currHoveredElem = event.target.dataset.index;
+        // console.log(currHoveredElem)
+        this.fillStars(currHoveredElem);
     }
 
     onRestoringRating() {
-        // console.log('Mouse is leaving')
+        // console.log('Mouse is leaving');
+        this.fillStars(this.filled);
     }
 }
 

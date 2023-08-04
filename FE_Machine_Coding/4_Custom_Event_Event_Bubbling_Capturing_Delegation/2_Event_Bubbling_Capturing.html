@@ -1,0 +1,90 @@
+<!--
+   Event Bubbling:
+    - It's a default behavior in the DOM when an event is triggered on particular element.
+    - Event bubbling happens bottom to top.
+    - Eg: click on any button or div element.
+   Event Capturing:
+    - This will be rarely used but you need to create event capturing explicitly.
+    - Event capturing happens from top to bottom.
+
+   What is problem/ disadvantage of having event bubbling or event capturing?
+    - 1. web performance impact.
+    - 2. unintended event handling.
+
+    Solution:
+     1. event.stopPropagation();
+     2. Event Delegation along event.stopPropagation();
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Buubling and Event Capturing</title>
+</head>
+<style>
+   body {
+       border: 1px solid red; 
+   }
+
+   #outer {
+       border: 1px solid green; 
+   }
+
+    #inner {
+       border: 1px solid purple; 
+   }
+
+</style>
+<body>
+
+    Click the body element 
+
+       <div id="outer">
+           Outer div
+        <div id="inner">
+            Inner div
+        </div>
+       </div>
+<script>
+
+    // const innerElem = document.getElementById('inner');
+    // innerElem.addEventListener('click', ()=>{
+    //     console.log('Inner element is clicked');
+    // }, true);
+
+    // const outerElem = document.getElementById('outer');
+    // outerElem.addEventListener('click', () => {
+    //     console.log('Outer element is clicked');
+    // }, true);
+
+    // const bodyElem = document.querySelector('body');
+    // bodyElem.addEventListener('click', () => {
+    //     console.log('body element is clicked');
+    // }, true);
+
+    const innerElem = document.getElementById('inner');
+    innerElem.addEventListener('click', (event) => {
+        event.stopPropagation();
+        console.log('Inner element is clicked');
+    });
+
+    const outerElem = document.getElementById('outer');
+    outerElem.addEventListener('click', (event) => {
+        event.stopPropagation();
+        console.log('Outer element is clicked');
+    });
+
+    const bodyElem = document.querySelector('body');
+    bodyElem.addEventListener('click', () => {
+        console.log('body element is clicked');
+    });
+           
+</script>
+    
+</body>
+</html>
