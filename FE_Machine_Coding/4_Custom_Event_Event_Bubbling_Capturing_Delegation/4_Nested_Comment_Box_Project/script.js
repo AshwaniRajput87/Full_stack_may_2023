@@ -6,13 +6,13 @@
  *    -  slack channel, Microsoft Teams
  *  
  *  Requirements:
- *    - you need create an input filed to take the tex and button for adding a comment.
- *    - After clicking of button need add the text netered in input field with  a reply button
+ *    - you need create an input field to take the text and a button for adding a comment.
+ *    - After clicking of button need to add the text entered in input field with a reply button
  *    
  *  Approach:
  *    - need a input field and a button
  *    - attach an event on add button and create an element with entered text and reply button
- *    - if i clcik on reply button, again input filed with button has apprear with repect to that comment/ thread.
+ *    - if i click on reply button, again input field with button has to apprear with respect to that comment/ thread.
  */
 
 class CommentBox {
