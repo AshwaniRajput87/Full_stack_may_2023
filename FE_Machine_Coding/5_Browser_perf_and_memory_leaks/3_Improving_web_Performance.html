@@ -1,0 +1,42 @@
+<!-- 
+
+   Improving web performance:
+       - Rendering Optimisation:
+
+        1. While write your HTML code:
+            - avoiding the unnecessary elemnts/tags.
+            - Try to reduce DOM size.
+            - Vaildated HTML need to write
+        2. CSS and Layout
+            - use flexbox or grid layouts 
+            - Avoid the fixed dimensions
+            - use % or em or rem units for the responsive designs.
+        3. Image Optimisation -> 
+            - compress and optimise images.
+            - modern format of images WebP wheresoever supporting try to use it.
+            - use responsive images like you can use brakpoints via media query or 
+              picture tag -> srcset and sizes(media query)
+
+            - load the image lazily via lazy attibutes of <img/> tag. -> not supporting by all browsers
+            - can use preload or prefetch
+
+        4. Minimise refolws and repaints:
+           - use tranform property for animations and transitions -> minimise the repainting.
+           - Fragments and its use case.
+
+        5. Minimize the CSS - via minification tool
+        
+        6. defer the non-critical css
+            - critical CSS -> required for first paint or above the fold
+            - non-critical CSS -> for below fold
+
+       - Javascript Optimisation:
+        1. use defer or async for the external JS files
+        2. Use code splitting of your JS files
+        3. Minify the javascript
+        4. Use fragments
+        5. code clean - > taking care of memory leakage problems
+        6. Use CDN -> for your heavy assests -> images/SVGS/audio/videos -> can use AWS cloudfront CDN for 
+                    putting your heavy assests there only
+        7. use memoization.
+ -->

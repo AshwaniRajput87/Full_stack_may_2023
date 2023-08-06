@@ -1,0 +1,45 @@
+<!-- 
+
+   Memory tab:  monitors how your's memory(RAM) is being used.
+
+   Performance tab: displaying you real-time system metrics like CPU, disk, memory usage, 
+                    how much time script, HTML and CSS is going to take on load.
+
+   Network tab: track the data and other netwrok activity 
+                likewise, HTML page, CSS files, images, audio/videos, fonts, HTTP requests.
+
+  
+    Performance API:
+       - It's web browser interface that provides performance-related information for the web pages.
+       - performance.now()
+       - console.time() and console.timeEnd()
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+
+    <script>
+        const startTime = performance.now();
+
+        // simulate the behavior of some expensive task
+        for(let i = 0; i<10000; i++) {
+            console.log(`Item-${i+1}`);
+        }
+
+        const endTime = performance.now();
+
+        const loadTime = endTime - startTime;
+
+        console.log(`Page load time: ${loadTime} milliseconds`)
+
+    </script>
+     
+ </body>
+ </html>

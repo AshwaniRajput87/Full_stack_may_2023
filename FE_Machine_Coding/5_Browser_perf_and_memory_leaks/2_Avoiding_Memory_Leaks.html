@@ -1,0 +1,67 @@
+<!-- 
+ 1. Avoiding common JS memory leaks:
+    1. Manage Timers and Intervals -> (setTimeout() and setInterval()) -> clearTimeout() & clearInterval()
+    2. global variables and same name of variables and methods should be avoided.
+    3. Use proper scope and closures.
+        const setData = () => {
+            const data = fetch('http request url');
+
+            data = null;// Dereference the data variable which may persist in the closure.
+        }
+
+    4. Dereference the large objects;
+       let obj = [
+            {
+                data: {
+                    collegeData: ['']
+                    info: {
+
+                    }
+                }
+           } 
+        ]
+
+        obj = null;
+
+    5. Use the Modern JS practices:
+        - Use let and const instead of using var.
+        - Use arrow functions, if "this" keyword is not required.
+        - Use classes and bind the methods inside the class.
+
+    6. Memory profiling and test it via performance API.
+    
+    7. Usage of immutability for the objects.
+        - Object.seal();
+        - Object.freeze();
+
+    8. Regularly monitor and update the third party libraries -> for web performance and security.
+
+    9. const promise = new Promise((resolve, reject)=>{
+        // some logic
+       });
+
+       Don't forgot to use promises.
+
+       promise.then(()=>{
+
+       }).catch(()=>{
+
+       })
+
+       async/await ->  use try and catch block.
+    
+2. DOM APIs Leak and how to take care/ handle them?:
+    - if you are attaching the event handlers to a html element, 
+      then you must take care of removing that event handler.
+       element.addEventListener('click', ()=> {
+           // put your logic
+       });
+
+       element.removeEventListener('click', method name);
+
+    - Event bubbling / Event Capturing -> event.stopPropagation();
+    
+    - if a huge data(eg: a list of huge data) need to append in the DOM then use fragments -> web performance
+
+    - don't expose sensitive user data on the params of url while make get request/ post request.
+ -->

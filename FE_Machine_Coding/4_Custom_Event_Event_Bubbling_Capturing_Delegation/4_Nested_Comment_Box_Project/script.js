@@ -14,7 +14,7 @@
  *    - attach an event on add button and create an element with entered text and reply button
  *    - if i click on reply button, again input field with button has to apprear with respect to that comment/ thread.
  */
-
+import { isStringEmpty } from './utils/stringUtil.js';
 class CommentBox {
     constructor() {
         this.commentInput = document.getElementById('commentInput');
@@ -27,11 +27,9 @@ class CommentBox {
     }
 
     addComment() {
-        // console.log(event);
         const commentText = this.commentInput.value.trim();
-        console.log(commentText);
 
-        if (commentText !== '') {
+        if (!isStringEmpty(commentText)) {
             const newComment = this.createCommentElement(commentText);
             this.commentList.appendChild(newComment);
             this.commentInput.value = '';
@@ -54,21 +52,13 @@ class CommentBox {
     }
 
     showReplyInput(event) {
-        // console.log('replying you');
         const replyBtn = event.target;
-        //console.log(replyBtn);
-
-        // console.log(replyBtn.parentElement);
 
         const li = replyBtn.parentElement;
-        //const replyContainer = li.querySelector('');
+
         const replyContainer = document.createElement('div');
         replyContainer.classList.add('reply-container');
         li.appendChild(replyContainer);
-        //console.log(replyContainer.classList);
-        //console.log(replyContainer.classList.add('reply-container'));
-
-        //console.log(replyContainer);
 
         const replyInput = document.createElement('input');
         replyInput.type = 'text';
@@ -77,14 +67,21 @@ class CommentBox {
         const replyAddBtn = document.createElement('button');
         replyAddBtn.textContent = 'Add Reply';
 
-        replyAddBtn.addEventListener('clcik', () => {
-            
-        });
+        replyAddBtn.addEventListener('click', this.addReply.bind(this, replyContainer, replyInput));
        
-
         replyContainer.appendChild(replyInput);
         replyContainer.appendChild(replyAddBtn);
 
+    }
+
+    addReply(replyContainer, replyInput) {
+        const replyTxt = replyInput.value.trim();
+
+        if (!isStringEmpty(replyTxt)) {
+            const replyLi = this.createCommentElement(replyTxt);
+            replyContainer.appendChild(replyLi);
+            replyInput.value = '';
+        }
     }
 }
 
