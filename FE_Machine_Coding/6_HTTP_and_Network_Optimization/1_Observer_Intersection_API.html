@@ -1,0 +1,43 @@
+<!-- 
+    Intersection Observer API:
+       - It is a browser API not provided by Core Javascript.
+       - allows you to watch and respond when an element enters or leaves the visible area of its container.
+       - Usecases of Intersection Observer
+            * lazy loading of images and videos.
+            * infinite scrolling
+            * Ad Tracking and google analytics
+            * scroll-triggered effects
+            * in-view animations
+            * Lazy loaing of components.
+
+       - steps to follow to use Intersection Observer API:
+          1. create Intersection Observer instance
+               const observer = new IntersectionObserver(handleIntersectionCallback, options);
+          2. Define handleIntersectionCallback 
+
+            handleIntersectionCallback(entries, observer) {
+                entries.forEach((entry)=> {
+                    if(entry.isIntersecting){
+                        // do something here
+                    } else {
+                        // do something else here
+                    }
+                })
+            }
+
+          3. Define options = {
+                root: document.querySelector('.image-container');
+                rootMargin: '50px';
+                threshold: 0.25 // range - [0-1] -> 0, 0.25, 0.50, 075, 1 -> defines how the observer should trigger the
+                callback(handleIntersectionCallback)
+            }
+
+         4. observe the element
+            observer.observe(targetElement)
+
+         5. unobserve the element (optional)
+            observer.unobserve(targetElement)
+        
+         6. disconnect (optional)
+           observer.disconnect();
+ -->
