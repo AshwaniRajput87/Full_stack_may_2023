@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food Subscription</title>
+  <meta name="description" content="food subscription website" />
+  
+  <!--<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </noscript>-->
+ 
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit&display=swap">
+
+  <!--<link rel="preload" href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit&display=swap">
+  </noscript>-->
+  <!--
+  The font-display: swap property ensures that text content is visible to users even before the custom web font has finished loading. 
+  It allows the browser to display a fallback font initially and then swap it with the desired web font once it becomes available.
+  -->
+
+  <!--<link rel="preload" as="image" href="/assets/images/foodiesfeed.com_pizza-ready-for-baking-min.jpg">-->
+  <!--<link rel="preload" as="image" href="/assets/images/foodiesfeed.com_pizza-ready-for-baking-min.jpg">-->
+  <style>
+    /*---- Critical CSS ----*/
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Kanit', sans-serif;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    li a {
+      text-decoration: none;
+    }
+
+    :root {
+      /* 1.5rem * 10 = 15px
+         3.0rem 8 10 = 30px
+      */
+      font-size: 62.5%; /* 16px * 0.625 = 10px */
+    }
+
+    p, li, a, label, option {
+      font-size: 1.5rem;
+    }
+
+    h1 {
+      font-size: 4.5rem;
+      color: #ffffff;
+    }
+
+    .hb-text {
+      color: rgb(205, 8, 77);
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: 2.0rem;
+    }
+
+    h4 {
+      font-size: 1.6rem;
+    }
+
+    i {
+      font-size: 3.0rem;
+    }
+   
+  </style>
+  <!--<link rel="preload" as="image" href="/assets/images/foodiesfeed.com_pizza-ready-for-baking-min.jpg" media="(max-width: 400px)" />-->
+</head>
+
+<body>
+  <!-- Page Header-->
+  <header class="header" id="header">
+    <nav class="navigation" id="nav">
+      <ul class="nav-items">
+        <li class="nav-item">
+          <a class="nav-item-link" href="#features">FEATURES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item-link" href="#reviews">REVIEWS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item-link" href="#price">PRICE PLANS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-item-link" href="#contactus">CONTACT US</a>
+        </li>
+        <li class="nav-item">
+          <i class="fa-solid fa-bars"></i>
+        </li>
+      </ul>
+    </nav>
+    <div class="hero-banner">
+      <div class="hb-layer">
+        <h1>
+          MEAL PLANS.</br>
+          FOR <span class="hb-text">EVERYONE</span>
+        </h1>
+        <div class="hb-btn-groups">
+          <button class="hb-btn hb-book-now">Book Now</button>
+          <button class="hh-btn hb-show-more">Show me more</button>
+        </div>
+      </div>
+
+    </div>
+  </header>
+  <!-- Page Main Content-->
+  <main>
+    <!-- Features section-->
+    <section class="awesome-feature" id="features">
+      <h2>Awesome Features</h2>
+      <div class="underline"></div>
+      <div class="af-container">
+        <div class="af-item">
+          <div class="af-item__heading-wrapper">
+            <i class="fa-regular fa-calendar-plus"></i>
+            <h3 class="af-item__heading">365 days/year</h3>
+          </div>
+          <p class="af-item__desc">
+            Never cook again! We really mean that. Our subscription plans
+            include up to 365 days/year coverage. You can also choose to order
+            more flexibly if that's your style.
+          </p>
+        </div>
+        <div class="af-item">
+          <div class="af-item__heading-wrapper">
+            <i class="fa-solid fa-truck-fast"></i>
+            <h3 class="af-item__heading">30 minutes or free</h3>
+          </div>
+          <p class="af-item__desc">
+            You're only twenty minutes away from your delicious and super
+            healthy meals delivered right to your home. We work with the best
+            chefs in each town to ensure that you're 100% happy.
+          </p>
+        </div>
+        <div class="af-item">
+          <div class="af-item__heading-wrapper">
+            <i class="fa-solid fa-carrot"></i>
+            <h3 class="af-item__heading">100% organic</h3>
+          </div>
+          <p class="af-item__desc">
+            All our vegetables are fresh, organic and local. Animals are raised
+            without added hormones or antibiotics. Good for your health, the
+            environment, and it also tastes better!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Steps to follow section-->
+    <section class="steps-to-follow" id="steps">
+      <h2>STEPS TO FOLLOW</h2>
+      <div class="underline"></div>
+      <div class="stf_image-wrapper">
+        <img data-src="./assets/images/capture-min.png" alt="capture" width="300" height="100%"/>
+      </div>
+      <div class="stf-content-wrapper">
+        <ul class="stf-list-items">
+          <li class="stf-list-item">
+            <span>1</span>
+            <p>Choose the subscription plan that best fits your needs and sign
+              up today.</p>
+          </li>
+          <li class="stf-list-item">
+            <span>2</span>
+            <p>Order your delicious meal using our mobile app or website. Or
+              you can even call us!</p>
+          </li>
+          <li class="stf-list-item">
+            <span>3</span>
+            <p>
+              Enjoy your meal after less than 20 minutes. See you the next
+              time!</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Reviews section-->
+    <section id="reviews">
+      <h2>REVIEWS</h2>
+      <div class="underline"></div>
+      <div class="reviews-container">
+        <div class="reviews-content">
+          <img class="user-img" data-src="./assets/images/customer-min.jpg" alt="" width="200" height="200"/>
+          <h3 class="user-name">david smith</h3>
+          <p class="user-comment">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi iure
+            odio, quod nisi facilis commodi ut sunt ipsam, magnam eius repellat
+            perferendis porro, iste voluptas!
+          </p>
+          <div class="reviews-star-wrapper">
+            <i class="reviews-star fa-solid fa-star"></i>
+            <i class="reviews-star fa-solid fa-star"></i>
+            <i class="reviews-star fa-solid fa-star"></i>
+            <i class="reviews-star fa-solid fa-star"></i>
+            <i class="reviews-star fa-solid fa-star"></i>
+          </div>
+        </div>
+        <div class="reviews-content">
+          <img class="user-img" data-src="./assets/images/customer-min.jpg" alt="" width="200" height="200"/>
+          <h3 class="user-name">david smith</h3>
+          <p class="user-comment">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi iure
+            odio, quod nisi facilis commodi ut sunt ipsam, magnam eius repellat
+            perferendis porro, iste voluptas!
+          </p>
+          <div class="reviews-star-wrapper">
+            <i class="reviews-star fa-solid fa-star"></i>
+            <i class="reviews-star fa-solid fa-star"></i>
+            <i class="reviews-star fa-solid fa-star"></i>
+            <i class="reviews-star fa-solid fa-star"></i>
+            <i class="reviews-star fa-solid fa-star"></i>
+          </div>
+        </div>
+        <div class="reviews-content">
+          <img class="user-img" data-src="./assets/images/customer-min.jpg" alt="" width="200" height="200"/>
+          <h3 class="user-name">david smith</h3>
+          <p class="user-comment">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi iure
+            odio, quod nisi facilis commodi ut sunt ipsam, magnam eius repellat
+            perferendis porro, iste voluptas!
+          </p>
+          <div class="reviews-star-wrapper">
+            <i class="reviews-star fa-solid fa-star"></i>
+            <i class="reviews-star fa-solid fa-star"></i>
+            <i class="reviews-star fa-solid fa-star"></i>
+            <i class="reviews-star fa-solid fa-star"></i>
+            <i class="reviews-star fa-solid fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing section-->
+    <section id="price" class="pricing-plans">
+      <h2>start eating health today</h2>
+      <div class="underline"></div>
+      <div class="pp-content-wrapper">
+        <div class="pp-content-item">
+          <h3 class="pp-heading">Premium</h3>
+          <h4 class="pp-text">$399/month</h4>
+          <p class="pp-description">That's only 13.30$ per meal</p>
+          <ul class="pp-list-items">
+            <li class="pp-list-item">1 meal every day</li>
+            <li class="pp-list-item">Order 24/7</li>
+            <li class="pp-list-item">Access to newest creations</li>
+            <li class="pp-list-item">Free delivery</li>
+          </ul>
+          <button class="btn btn--primary">I'm hungry</button>
+        </div>
+
+        <div class="pp-content-item">
+          <h3 class="pp-heading">Premium</h3>
+          <h4 class="pp-text">$399/month</h4>
+          <p class="pp-description">That's only 13.30$ per meal</p>
+          <ul class="pp-list-items">
+            <li class="pp-list-item">1 meal every day</li>
+            <li class="pp-list-item">Order 24/7</li>
+            <li class="pp-list-item">Access to newest creations</li>
+            <li class="pp-list-item">Free delivery</li>
+          </ul>
+          <button class="btn btn--primary">I'm hungry</button>
+        </div>
+
+        <div class="pp-content-item">
+          <h3 class="pp-heading">Premium</h3>
+          <h4 class="pp-text">$399/month</h4>
+          <p class="pp-description">That's only 13.30$ per meal</p>
+          <ul class="pp-list-items">
+            <li class="pp-list-item">1 meal every day</li>
+            <li class="pp-list-item">Order 24/7</li>
+            <li class="pp-list-item">Access to newest creations</li>
+            <li class="pp-list-item">Free delivery</li>
+          </ul>
+          <button class="btn btn--primary">I'm hungry</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Us section-->
+    <section class="contact-us" id="contactus">
+      <h2>contact us</h2>
+      <div class="underline"></div>
+      <div class="cu-container">
+        <div class="cu-animation">
+          <!-- <video width="400px" height="500px" src="./assets/videos/Avocado.mp4" autoplay muted loop></video> -->
+          <img class="cu-animation-img" data-src="./assets/images/avacado.gif" alt="Avacado image"/>
+        </div>
+        <div class="cu-form-wrapper">
+          <form class="cu-form" action="">
+            <div class="cu-form__name">
+              <label class="cu-form-label" for="name">Name</label>
+              <input class="cu-input-field cu-name" type="text" id="name"/>
+            </div>
+            <div class="cu-form__email">
+              <label class="cu-form-label" for="email">Email</label>
+              <input class="cu-input-field cu-email" type="email" id="email"/>
+            </div>
+
+            <div class="cu-form__select">
+              <label class="cu-form-label" for="findUs">How did you find us</label>
+              <select class="cu-form-select" name="find" id="findUs">
+                <option class="cu-form-select__option" value="">Friends</option>
+                <option class="cu-form-select__option" value="">Search</option>
+                <option class="cu-form-select__option" value="">Advertisement</option>
+                <option class="cu-form-select__option" value="">Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="cu-form-label" for="message">Drop us a line</label>
+              <textarea class="cu-form-textarea" name="message" id="message" cols="30" rows="10"></textarea>
+            </div>
+            <div>
+              <input class="cu-form-checkbox" type="checkbox" id="terms-condition" />
+              <label class="cu-form-label" for="terms-condition">I have read and agree with all the Privacy Policy and Terms
+                Conditions</label>
+            </div>
+            <div>
+              <button class="btn btn--primary">Send Message</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Page Footer-->
+  <footer class="footer">
+    <ul class="footer-items">
+      <li class="footer-item"><a href="/about">About</a></li>
+
+      <li class="footer-item"><a href="/iOS">ios App</a></li>
+
+      <li class="footer-item"><a href="/android">Android App</a></li>
+    </ul>
+
+    <ul class="footer-social-items">
+      <li class="fs-item"><a class="fs_link" href="/facebookPage" title="facebook"><i class="fs-icon fa-brands fa-square-facebook"></i></a></li>
+      <li class="fs-item"><a class="fs_link" href="/twitterPage" title="twitter"><i class="fs-icon fa-brands fa-twitter"></i></a></li>
+      <li class="fs-item"><a class="fs_link" href="/instagramPage" title="instagram"><i class="fs-icon fa-brands fa-instagram"></i></a></li>
+    </ul>
+
+    <div class="footer-copyright-wrapper">
+      <p class="fc-text">Copyright 2023 EVERYONE. All rights reverved.</p>
+    </div>
+  </footer>
+  
+  <!-- Non-critical CSS -->
+  <link rel="stylesheet" href="./css/fs-styles-min.css" />
+  <script async type="module" src="./js/script-min.js"></script>
+</body>
+
+</html>

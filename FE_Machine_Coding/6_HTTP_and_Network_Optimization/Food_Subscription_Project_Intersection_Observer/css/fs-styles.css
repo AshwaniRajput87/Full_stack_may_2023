@@ -1,0 +1,142 @@
+/* Header section stylings */
+
+/* .navigation {
+  overflow: hidden;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  height: 36px;
+  width: 100%;
+  z-index: 1;
+} */
+
+.navigation {
+  position: fixed;
+  background: #ffffff;
+  overflow: hidden;
+  top: 0;
+  height: 30px;
+  width: 100%;
+  z-index: 1;
+}
+
+.nav-items {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.nav-item a {
+  /* color: #ffffff; */
+  font-size: 1.6rem;
+}
+
+.nav-item:last-child {
+  display: none;
+}
+
+.hero-banner {
+  width: 100%;
+  height: 80vh;
+  background: rgba(0, 0, 0, 0.7)
+    url("../assets/images/foodiesfeed.com_pizza-ready-for-baking-min.jpg")
+    no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.underline {
+  padding-top: 3rem;
+  border-bottom: 2px solid red;
+  width: 15%;
+  margin: auto;
+}
+
+.hb-layer {
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* Awesome feature section stylings */
+.awesome-feature {
+  background-color: #ffffff;
+}
+
+.af-container {
+  display: flex;
+  margin: 2.5rem;
+  gap: 2rem;
+  justify-content: space-around;
+}
+
+.af-item {
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 10px 30px 0 rgba(100, 100, 111, 0.2);
+}
+
+.af-item__heading-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.af-item__heading,
+h2 {
+  text-align: center;
+}
+
+i {
+  color: red;
+}
+
+.cu-container {
+  display: flex;
+  flex-wrap: wrap; /* Enable wrapping for responsive layout */
+  justify-content: center;
+}
+
+.cu-video {
+  flex: 0 0 50%; /* Set the width of the video column */
+}
+
+.cu-video video {
+  width: 100%; /* Make the video fill the width of its container */
+  height: auto; /* Preserve the aspect ratio of the video */
+}
+
+.cu-form-wrapper {
+  margin-left: 50px;
+}
+
+.stf_image-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  .af-container {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .cu-container {
+    flex-direction: column;
+  }
+
+  .nav-item {
+    display: none;
+  }
+
+  .nav-item:last-child {
+    display: inline;
+  }
+}
