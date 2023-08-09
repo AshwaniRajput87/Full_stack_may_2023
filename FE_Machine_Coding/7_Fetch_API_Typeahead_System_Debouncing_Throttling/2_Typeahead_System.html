@@ -1,0 +1,63 @@
+<!-- 
+    Typeahead system:
+      - shows you the suggestions while type something on the input field or search box.
+
+    Benefits:
+      - helps the end user for selecting the provided suggestions
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Creating a typeahead system</title>
+     <style>
+         .typeahead-cont {
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             flex-direction: column;
+         }
+
+         .typeahead-input {
+             width: 300px;
+             padding: 8px;
+             border: 1px solid green;
+         }
+
+         .suggestion-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border:  1px solid #ccc;
+            width: 318px;
+         }
+
+         .suggestion-list li {
+             padding: 5px;
+             cursor: pointer;
+         }
+
+         .suggestion-list li:hover {
+             background-color: #ccc;
+         }
+     </style>
+ </head>
+
+ <body>
+    <div class="typeahead-cont">
+        <input type="text" placeholder="Type Something here..." id="typeahead-input" class="typeahead-input"/>
+        <ul id="suggestionList" class="suggestion-list">
+            <!-- add lis here with data -->
+        </ul>
+    </div>
+
+    <script src="./scripts/Typeahead.js">
+
+    </script>
+     
+ </body>
+ </html>

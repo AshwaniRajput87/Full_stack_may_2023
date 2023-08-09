@@ -1,0 +1,62 @@
+<!-- 
+   Fetch API:
+      - Provided by the browser, not by the jaavascript itself.
+      - helps javascript developers to make API calls for submitting or fetching data from servers.
+      - We use fetch(url,options) which returns a promise to resolve or reject the response of the request that you made.
+      - provides you a fexible and promise-based approach for handling the async operations.
+
+      fetch(' end point').then((res)=>{
+            // handling the response here
+      }).catch(()=>{
+           // handle the network errors/ backend error scenarios
+      })
+
+      end point: https://jsonplaceholder.typicode.com/posts/1/comments
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Fetch API usage</title>
+    <style>
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        tr,th, td {
+            border: 1px solid #000;
+            padding: 5px;
+            text-align: left;
+        }
+
+        th {
+            background-color: grey;
+        }
+    
+    </style>
+ </head>
+ 
+ <body>
+     <table id="data-table">
+         <thead>
+             <tr>
+                 <th>Post id</th>
+                 <th>Name</th>
+                 <th>Email</th>
+                 <th>Body</th>
+             </tr>
+         </thead>
+         <tbody>
+             <!-- Data will be added here -->
+         </tbody>
+     </table> 
+     <script type="module" src="./scripts/fetchData.js"></script>    
+ </body>
+ </html>
+
+

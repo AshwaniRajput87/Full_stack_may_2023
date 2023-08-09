@@ -1,0 +1,109 @@
+<!-- 
+   Debouncing:
+       - it's a technique used in the programming to control the frequency of repeated action.
+
+    Benefit of using debouncing:
+       - improve the user experience.
+       - improve web performance because you are minimizing the network calls.
+
+    Throttling:
+       - means restricts the execution of function to a specified delay
+       - usecases:
+           1. preventing the rapid button clicks
+           2. limiting the scroll event triggers.
+           3. controlling of data fetch freqency.
+
+    Debouncing vs throttling
+      Debouncing: focuses on waiting of a pause before executing the function.
+      Throttling: focuses on limiting the rate of execution within a specified interval.
+
+      sharing a good article Reference: https://css-tricks.com/the-difference-between-throttling-and-debouncing/
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating a typeahead system</title>
+    <style>
+        .typeahead-cont {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .typeahead-input {
+            width: 300px;
+            padding: 8px;
+            border: 1px solid green;
+        }
+
+        .suggestion-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border: 1px solid #ccc;
+            width: 318px;
+        }
+
+        .suggestion-list li {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .suggestion-list li:hover {
+            background-color: #ccc;
+        }
+
+        body {
+            height: 2000px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="typeahead-cont">
+        <input type="text" placeholder="Type Something here..." id="typeahead-input" class="typeahead-input" />
+        <ul id="suggestionList" class="suggestion-list">
+            <!-- add lis here with data -->
+        </ul>
+    </div>
+
+
+
+    <script type="module" src="./scripts/Typeahead.js"></script>
+    
+    <script>
+
+        const throttle = (fn, delay) => {
+            let lastExecutionTime = 0;
+            return function (...args) {
+                const currentTime = Date.now();
+
+                if (currentTime - lastExecutionTime >= delay) {
+                    fn.apply(this, args);
+                    lastExecutionTime = currentTime;
+                }
+            }
+        }
+        //usage of throttling here
+        const throttledScrolled = throttle(()=>{
+            console.log('Scrolling event is happening');
+        }, 3000);
+
+        window.addEventListener('scroll', throttledScrolled);
+
+        // const func = throttle(() =>{
+
+        // }, 2000);
+
+        // document.getElementById('btn-id').addEventListener('click', func);
+    </script>
+
+</body>
+
+</html>
