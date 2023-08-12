@@ -1,0 +1,33 @@
+<!-- 
+   
+    Client side storage:
+       - It's browser API to store data locally at the client(means on your browser).
+       - usecase:
+          - store the information for user preferences.
+          - session data
+          - persist the refresh token
+          - re-direction url with data.
+          - cached content.
+        - client storage are of 3 types:
+           1. local storage
+               - stores key-value pair data on a user's device
+               - the data persist after closing of the browser.
+               - localStorage.setItem(key, value) - for persisting the data in localstorage.
+               - localStorage.getItem(key) - get the value correspond to that key
+               - localStorage.removeItem(key) - to remove particular key data only.
+               - localStorage.clear() - to remove whole data from localStorage.
+
+           2. session storage:
+               - similar to local storage, stores key-value pair data on a user's device.
+               - but the data persist till the session of the browser window/tab. 
+               - sessionStorage.setItem(key, value) - for persisting the data in localstorage.
+               - sessionStorage.getItem(key) - get the value correspond to that key
+               - sessionStorage.removeItem(key) - to remove particular key data only.
+               - sessionStorage.clear() - to remove whole data from localStorage.
+
+           3. cookies:
+               - small pieces of data stored into the browser's only
+               - document.cookies = "key: value, path:'/login"
+               - document.cookie
+           // indexdb
+ -->

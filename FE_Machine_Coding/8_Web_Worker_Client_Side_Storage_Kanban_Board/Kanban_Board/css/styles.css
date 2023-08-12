@@ -1,0 +1,80 @@
+:root {
+  --red: red;
+  --green: rgb(16, 180, 16);
+  --blue: rgb(22, 22, 214);
+  --black: black;
+  font-size: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.toolbox-cont {
+  height: 10rem;
+  background-color: var(--black);
+  display: flex;
+  justify-content: flex-start;
+}
+
+.toolbox-priority-cont {
+  height: 6rem;
+  background-color: aliceblue;
+  width: 320px;
+  margin: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.color {
+  width: 6rem;
+  height: 4rem;
+}
+
+.red {
+  background-color: var(--red);
+}
+
+.green {
+  background-color: var(--green);
+}
+
+.blue {
+  background-color: var(--blue);
+}
+
+.black {
+  background-color: var(--black);
+}
+
+.action-btn-cont {
+  height: 6rem;
+  background-color: aliceblue;
+  width: 150px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.add-btn {
+  font-size: 2.75rem;
+  cursor: pointer;
+}
+
+.remove-btn {
+  font-size: 2.75rem;
+  cursor: pointer;
+}
+
+.main-cont {
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: flex-start;
+}

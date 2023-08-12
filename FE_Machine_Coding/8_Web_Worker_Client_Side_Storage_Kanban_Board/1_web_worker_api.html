@@ -1,0 +1,109 @@
+<!-- 
+   Web workers:
+      - helpers for javascript.
+      - It is provided by browser API not the core concept of javascript.
+      - Allows you to run the javascript code in the background thread which is separate from the main thread.
+      - It enables you to execute the tasks concurrently/parallely.
+
+      Steps for utilizing the web workers:
+      1. creating web worker:
+         worker.js
+         
+         self.onmessage = function(event) {
+            const msgData = event.data;
+
+            const result = performTask(messageData);
+
+            self.postMessage(result);
+         }
+
+         function performTask(data) {
+           // the logic
+         }
+
+        2. Creating and using the web worker
+           const worker = new Worker('./scripts/worker.js');
+
+           const enteredValue;
+
+           worker.onmessage = function(event) {
+               const result = event.data;
+           }
+
+           const someDataInputfield = document.getElementById('input-id');
+           someDataInputfield.addEventListener('input', (event)=>{
+               enterdValue = event.tagert.value;
+           })
+
+           worker.postMessage(enterdValue);
+        
+        3. worker.terminate(); // terminate the worker thread.
+ -->
+
+ <!--
+   find and print the prime numbers on DOM among 100000
+   
+   Prime number:
+      - a number is divisible by 1 or itself but not divisible by other numbers.
+        1 -> not prime 
+        2 -> yes
+        3 -> yes
+        4 -> not prime
+        5 -> prime
+        6 -> no
+        7 -> prime 
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web worker Example</title>
+    <style>
+        li{
+            list-style: none;
+            display: inline-flex;
+            flex-wrap: wrap;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1> Prime Number Calculator </h1>
+    <button id="prime-btn">Calculate Primes</button>
+
+    <ul id="prime-list">
+        <!-- All prime number lis will come here dynamically -->
+    </ul>
+
+    <script>
+
+        const calculateBtn = document.getElementById('prime-btn');
+        const primeListUL = document.getElementById('prime-list');
+
+        calculateBtn.addEventListener('click', ()=>{
+            const worker = new Worker('./scripts/worker.js');
+            // console.log(worker);
+            const limit = 100000;
+
+            worker.onmessage = function(event) {
+
+                const primes = event.data;
+
+                primes.forEach(prime => {
+                    const li = document.createElement('li');
+                    li.textContent = prime;
+                    primeListUL.appendChild(li);
+                });
+
+                worker.terminate();
+            }
+
+            worker.postMessage(limit);
+        });
+    </script>
+</body>
+</html>

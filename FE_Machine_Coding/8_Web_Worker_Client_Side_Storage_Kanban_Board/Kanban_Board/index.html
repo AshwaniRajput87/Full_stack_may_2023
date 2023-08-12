@@ -1,0 +1,57 @@
+<!-- 
+    Reference:
+    font awesome icons: <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    generate random unique id: https://cdn.jsdelivr.net/npm/short-unique-id@latest/dist/short-unique-id.min.js
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Kanban Board</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+ </head>
+
+ <body>
+    <div class="toolbox-cont">
+         <div class="toolbox-priority-cont">
+             <div class="color red"></div>
+             <div class="color blue"></div>
+             <div class="color green"></div>
+             <div class="color black"></div>
+         </div>
+
+         <div class="action-btn-cont">
+            <div class="add-btn">
+               <i class="fa-solid fa-plus"></i> 
+            </div>
+            <div class="remove-btn">
+                <i class="fa-solid fa-trash"></i>
+            </div>
+         </div>
+    </div>
+
+    <div class="main-cont">
+        <div class="ticket-cont">
+            <div class="ticket-color"></div>
+            <div class="ticket-id">123</div>
+            <div class="ticket-area">Task 1</div>
+            <div>
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <i class="fa-solid fa-lock-open"></i>
+        </div>
+    </div>
+
+    <div class="modal-cont">
+       
+    </div>
+
+    <link rel="stylesheet" href="./css/styles.css"/>
+    <script src="./scripts/script.js"></script>
+     
+ </body>
+ </html>
