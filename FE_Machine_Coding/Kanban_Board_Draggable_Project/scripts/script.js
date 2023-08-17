@@ -9,14 +9,19 @@ class KanbanBoard {
       this.mainCont = document.querySelector('.main-cont');
       this.allPriorityColorElems = document.querySelectorAll('.priority-color');
       this.removeBtn = document.querySelector('.remove-btn');
-        
+      this.todoContainer = document.querySelector('#todo');
+
       this.addModal = true;
       this.colors = ['red', 'green', 'blue', 'black'];
       this.modalPriorityColor = 'black';
       this.removeFlag = false;
+      this.status = 'todo';
 
       this.ticketArr = [];
+      this.init();
+   }
 
+   init() {
       this.toolboxContainer.addEventListener('click', this.handleToolboxClick.bind(this));
       this.closeBtn.addEventListener('click', this.closeModal.bind(this));
       this.addCardBtn.addEventListener('click', this.handleAddCardClick.bind(this));
@@ -27,6 +32,13 @@ class KanbanBoard {
       for (const priotyColorElem of this.allPriorityColorElems) {
          priotyColorElem.addEventListener('click', this.handlePriotyColorClick.bind(this, priotyColorElem));
       }
+
+      this.todoContainer.addEventListener('dragstart', this.handleTicketDargStart.bind(this));
+      this.todoContainer.addEventListener('dragend', this.handleTicketDargEnd.bind(this));
+
+      this.mainCont.addEventListener('dragover', this.handleDragOver.bind(this));
+      this.mainCont.addEventListener('drop', this.handleDrop.bind(this));
+
    }
 
    handleToolboxClick(event) {
@@ -65,20 +77,33 @@ class KanbanBoard {
       const id = new ShortUniqueId().randomUUID();
 
       const ticketCont = this.createTicketElement(task, id, this.modalPriorityColor);
-      this.mainCont.appendChild(ticketCont);
-      this.ticketArr.push({id, task, color: this.modalPriorityColor});
+      //   this.mainCont.appendChild(ticketCont);
+      this.todoContainer.appendChild(ticketCont);
+      this.ticketArr.push({
+         id,
+         task,
+         color: this.modalPriorityColor,
+         status: this.status
+      });
 
       this.clearTextareaAndcloseModal();
-      
+
       this.updateLocalStorage();
       this.handleLockUnlockTicket(ticketCont, id);
       this.handlePriorityColorChange(ticketCont, id);
       this.handleDelete(ticketCont, id);
+
+      // add drag and drop listerners
+      ticketCont.draggable = true;
+      ticketCont.addEventListener('dragstart', this.handleTicketDargStart.bind(this));
+      ticketCont.addEventListener('dragend', this.handleTicketDargEnd.bind(this));
    }
 
    createTicketElement(task, id, color) {
       const ticketCont = document.createElement('div');
       ticketCont.className = 'ticket-cont';
+      ticketCont.draggable = true;
+      ticketCont.id = id;
       ticketCont.innerHTML = `
             <div class="ticket-color ${color}"></div>
             <div class="ticket-id">#${id}</div>
@@ -111,16 +136,35 @@ class KanbanBoard {
 
    renderStoredTickets() {
       for (const ticket of this.ticketArr) {
-         this.appendTicketElement(ticket.task, ticket.id, ticket.color);
+         this.appendTicketElement(ticket.task, ticket.id, ticket.color, ticket.status);
       }
    }
 
-   appendTicketElement(task, id, color) {
+   appendTicketElement(task, id, color, status) {
       const ticketCont = this.createTicketElement(task, id, color);
-      this.mainCont.appendChild(ticketCont);
+      ticketCont.id = id;
+
+      if (status === 'todo') {
+         this.todoContainer.appendChild(ticketCont);
+      } else if (status === 'in-progress') {
+         const inprogressCont = document.getElementById('in-progress');
+         inprogressCont.appendChild(ticketCont);
+
+      } else if (status === 'completed') {
+         const completedCont = document.getElementById('completed');
+         completedCont.appendChild(ticketCont);
+      }
+
+      // this.mainCont.appendChild(ticketCont);
+
       this.handleLockUnlockTicket(ticketCont, id);
       this.handlePriorityColorChange(ticketCont, id);
       this.handleDelete(ticketCont, id);
+
+      // add drag and drop listerners
+      ticketCont.draggable = true;
+      ticketCont.addEventListener('dragstart', this.handleTicketDargStart.bind(this));
+      ticketCont.addEventListener('dragend', this.handleTicketDargEnd.bind(this));
    }
 
    handlePriotyColorClick(priotyColorElem) {
@@ -205,6 +249,49 @@ class KanbanBoard {
       if (event.key === 'Enter') {
          const task = this.textArea.value;
          this.createTicket(task);
+      }
+   }
+
+   handleTicketDargStart(event) {
+      //console.log(event.dataTransfer.setData("text/plain", event.target.id));
+      event.dataTransfer.setData("ticketId", event.target.id);
+      event.target.classList.add('dragging');
+   }
+
+   handleTicketDargEnd(event) {
+      console.log('dragging');
+      event.target.classList.remove('dragging');
+   }
+
+   handleDragOver(event) {
+      event.preventDefault();
+      event.stopPropagation();
+   }
+
+   handleDrop(event) {
+      event.preventDefault();
+      const ticketId = event.dataTransfer.getData("ticketId");
+      console.log(ticketId);
+
+      const droppedTicket = document.getElementById(ticketId);
+
+      if (droppedTicket) {
+         const targetCont = event.target.closest(".ticket-container");
+         if (targetCont) {
+            const newStatus = targetCont.id;
+            const sourceCont = droppedTicket.closest(".ticket-container");
+
+            sourceCont.removeChild(droppedTicket);
+            targetCont.appendChild(droppedTicket);
+
+            const idx = this.ticketArr.findIndex((obj) => obj.id === ticketId);
+
+            if (idx !== -1) {
+               this.ticketArr[idx].status = newStatus;
+               this.updateLocalStorage();
+            }
+
+         }
       }
    }
 }
