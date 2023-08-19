@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React first program</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <!-- react is a ui manipulation (logic)library -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- frontend -> dom  -->
+    <!-- react dom -> To get the actual changes in the DOM with the help of react DOM library  -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- to convert jsx to js  -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+        // const Hello = (props) => {
+        // //   return <h1>Hello friends welcome in the react world!!!</h1>;
+        //    return <h1>Hello {props.username}, welcome in the react world!!!</h1>;
+        // }
+
+        // const { username } = props;
+        const Hello = ({username}) => {
+            //   return <h1>Hello friends welcome in the react world!!!</h1>;
+            return <h1>Hello {username}, welcome in the react world!!!</h1>;
+        }
+
+        const Main = () => {
+            return (<div>
+                    <Hello username="Ashwani" /> 
+                    <Hello username="Rohant" /> 
+                    <Hello username="Shiv" /> 
+                    <Hello username="Binay" /> 
+                </div>);
+                
+        }
+
+        ReactDOM.render(<Main />, document.querySelector('#root'));
+    </script>
+
+    
+</body>
+</html>
