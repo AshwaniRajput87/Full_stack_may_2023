@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendering list via react</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+    <!-- 
+        JSX => HTML + JS
+    
+        to convert JSX -> JS
+     -->
+
+    <div id="root"></div>
+    
+    <!-- react is a ui manipulation (logic)library -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    
+    <!-- frontend -> dom -->
+    <!-- react dom -> To get the actual changes in the DOM with the help of react DOM library  -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    
+    <!-- to convert jsx to js -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <!-- 
+        Rendering list:
+           -> a list of data that needs to display in an ordered list.
+    -->
+    
+    <script type="text/babel">
+        const cricketers = ['Sachin', 'Peterson', 'Ricky', 'Rohit', 'Dhoni'];
+
+        // create a component
+        const RenderList = (props) => {
+            const data = props.data;
+            
+            // for(let i = 0; i<=data.length; i ++) {
+            //     console.log(data[i]);
+            // }
+
+            const listElem = data.map((name, idx)=> {
+                return (
+                    <li style={{ color: 'red' }} className="list-item" id={`item-${idx+1}`} key={`item-${idx+1}`}>{name}</li>
+                );
+            });
+
+            return (
+                <ul className="list-items">
+                    {listElem}
+                </ul>
+            );
+        }
+
+        ReactDOM.render(<RenderList data={cricketers}/>, document.getElementById('root'));
+
+        cricketers.push('Deepak');
+        console.log(cricketers);
+    </script>
+    
+</body>
+</html>
+

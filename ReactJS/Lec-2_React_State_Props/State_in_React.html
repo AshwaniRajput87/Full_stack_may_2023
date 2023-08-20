@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendering list via react</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+
+    <!-- 
+        JSX => HTML + JS
+    
+        to convert JSX -> JS
+     -->
+
+    <div id="root"></div>
+
+    <!-- react is a ui manipulation (logic)library -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+
+    <!-- frontend -> dom -->
+    <!-- react dom -> To get the actual changes in the DOM with the help of react DOM library  -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- to convert jsx to js -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <!-- 
+        what is state in react?
+           -> It's a built-in react object that is used to contain data about the component.
+           -> state can change over a period time; whenever it's get changes then the component is getting re-rendered.
+
+        How to respond the events in react and update the UI?
+           -> Event -> is just an action that could be triggered basis user action.
+           -> clicking on abutton, submitting the form, hover on an element
+    -->
+
+    <script type="text/babel">
+
+        const Counter = (props) => {
+            const num = props.number;
+            // const [data, setData] = React.useState({
+            //     count: 0,
+            //     renderingCount: 1
+            // });
+            // console.log(data);
+
+            const [count, setCount] = React.useState(0);
+            const [renderingCount, setRenderingCount] = React.useState(1);
+
+            const increment = () => {
+                setCount(count + 1);
+                setRenderingCount(renderingCount + 1);
+            }
+
+            const decrement = () => {
+                setCount(count - 1);
+                setRenderingCount(renderingCount + 1);
+            }
+
+            console.log('Re-rendered - ', renderingCount)
+
+            return (
+                <div>
+                    <button onClick={increment}>+</button>
+                    <p> Counter { num } Value: {count}</p>
+                    <button onClick={decrement}>-</button>
+                </div>
+            );
+        }
+
+        const Counters = () => {
+           return(
+                <div>
+                  <Counter number={1}/>
+                  <Counter number={2}/>
+                  <Counter number={3}/>
+                </div>
+           );
+
+        }
+        
+        ReactDOM.render(<Counters />, document.getElementById('root'));
+    </script>
+
+</body>
+
+</html>
