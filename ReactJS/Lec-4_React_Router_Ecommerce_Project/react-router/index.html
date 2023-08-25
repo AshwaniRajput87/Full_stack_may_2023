@@ -1,0 +1,63 @@
+<!-- 
+   React Router:
+      - It's a lib for managing and navigation different pages in a react app.
+        (To create MPA-> Multipage web app without reloading the whole page)
+
+      - usage of react-router-dom(you need to install it) -> npm i react-router-dom
+
+      - React router dom components:
+         1. BrowserRouter as Router:
+              - It's a component that provides the routing functionality for your react app.
+                <Router>
+
+                </Router>
+
+         2. Routes: 
+             - A container that holds multiple <Route> elements.
+             - It helps us to manage and oragnise multiple routes in a react app
+
+              <Router>
+                  Notes: You have to put the <Link> component here -> Because browser basepath is required
+                  <Routes>
+                      <Route path="/" element={<Home />} />
+                      <Route path="/about" element={<About />} />
+                      <Route path="/contact" element={<ContactUs />} />
+                  </Routes>
+              </Router>
+
+         3. Route:
+              - To define what componnet should be rendered based on current path url.
+              - <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+
+          4. Link:
+              - This is a component that allows you to navigate to different parts of your react app.
+              Navbar.jsx
+                 <ul>
+                    <li><Link to="/" name="Home" /></li>
+                    <li><Link to="/about" name="About" /></li>
+                    <li><Link to="/contact" name="Contact Us" /></li>
+                 <ul>
+ 
+         5. Navigate:
+               -  allows you to navigate to different routes of your react app directly via URL. (you can navigate without UI)
+                  Navigate('/about')
+               - after login redirect to land on dasboard page.
+                  Navigate("/dashboard")
+ -->
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -7,3 +7,9 @@
 
 <!-- to convert jsx to js -->
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+https://fakestoreapi.com/docs
+
+background-color: rgb(23, 78, 80);
+
+color: yellowgreen;
