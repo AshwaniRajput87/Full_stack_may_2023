@@ -1,6 +1,6 @@
 /***
  *  Function Composition:
- *      - a process of comibing 2 or more functions to produce a new function.
+ *      - a process of combining 2 or more functions to produce a new function.
  *      - addAndSquare(2,3); // 25
  *      - addAndSquare(3,3); // 36
  */
