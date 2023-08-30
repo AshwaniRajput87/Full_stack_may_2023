@@ -2,4 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 10px;
+    font-family: 'Kanit', sans-serif;
 }
+
+.container {
+    padding: 1.5rem 2rem;
+}
+

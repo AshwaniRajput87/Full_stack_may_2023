@@ -1,0 +1,36 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-items {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+    gap: 2rem;
+}
+
+.nav-item {
+    list-style: none; 
+}
+
+.nav-link {
+    color: #fff;
+    font-size: 1.4rem;
+     text-decoration: none;
+}
+
+.nav-link:hover {
+    border-bottom: 3px solid #fff;
+}
+
+.cart-icon-container {
+    display: flex;
+}
+
+.cart-icon {
+    color:  #fff;
+    font-size: 1.75rem;
+}
+

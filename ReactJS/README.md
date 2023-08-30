@@ -10,6 +10,7 @@
 
 https://fakestoreapi.com/docs
 
-background-color: rgb(23, 78, 80);
+rgb(35, 32, 204);
 
-color: yellowgreen;
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit&display=swap">
