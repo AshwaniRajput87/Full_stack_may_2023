@@ -9,9 +9,6 @@ import useFetchData from '../hooks/useFetchData';
 const AppRoutes = () => {
    const {data, isLoading } = useFetchData('https://fakestoreapi.com/products/categories',[]);
 
-
-
-
     return (
         console.log(data),
         <>
