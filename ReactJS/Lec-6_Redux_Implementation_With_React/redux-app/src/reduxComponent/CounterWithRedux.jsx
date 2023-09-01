@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { counterAction } from '../redux/slices/counterSlice';
 
 const CounterWithRedux = () => {
-
     const count = useSelector((store)=> store.counter.value);
     const dispatch = useDispatch();
     
@@ -15,16 +14,15 @@ const CounterWithRedux = () => {
         dispatch(counterAction.increment());
     }
 
-     
     return (
-        <>
-          <h2>Counter With Redux</h2>
-           <div className='container'>
-                <button onClick={handleDecrement}>-</button>
-                <p>{count}</p>
-                <button onClick={handleIncrement}>+</button>
-           </div>
-        </>
+      <>
+        <h2>Counter With Redux</h2>
+          <div className='container'>
+              <button onClick={handleDecrement}>-</button>
+              <p>{count}</p>
+              <button onClick={handleIncrement}>+</button>
+          </div>
+      </>
     )
 }
 

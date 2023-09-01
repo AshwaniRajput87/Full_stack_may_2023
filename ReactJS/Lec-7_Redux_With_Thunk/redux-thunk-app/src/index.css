@@ -1,5 +1,3 @@
-index.css:
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -69,26 +67,3 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-
-App.css:
-
-
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-}
-
-button {
-  margin-right: 1rem;
-  margin-left: 1rem;
-}
-
-Rest end point: https://jsonplaceholder.typicode.com/users/1
-

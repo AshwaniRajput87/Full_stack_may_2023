@@ -1,0 +1,17 @@
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
