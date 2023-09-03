@@ -3,14 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchUserMiddleWare } from "../redux/middleWare/userMiddleWare"
 
 const User = ({ userId }) => {
-
     const dispatch = useDispatch();
     const { data, error, isLoading } = useSelector(store => store.user);
 
     useEffect(()=>{
         const fetchData = async() => {
-        await fetchUserMiddleWare(dispatch, userId);
-       }
+            await fetchUserMiddleWare(dispatch, userId);
+        }
        fetchData();
     }, []);
 

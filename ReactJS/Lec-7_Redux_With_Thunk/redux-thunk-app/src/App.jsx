@@ -6,9 +6,11 @@ import './App.css'
 
 const App = () => {
   return (
-    <Provider store = {store}>
-      <User userId ={1}/>  
-    </Provider>
+    <>
+      <Provider store = {store}>
+        <User userId ={2}/>   
+      </Provider>
+    </>
   )
 }
 
