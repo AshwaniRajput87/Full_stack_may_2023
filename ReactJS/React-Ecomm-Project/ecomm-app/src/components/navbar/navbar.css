@@ -6,31 +6,60 @@
 
 .nav-items {
     display: flex;
-    justify-content: space-evenly;
-    padding: 1rem 0;
     gap: 2rem;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0.75rem 0;
 }
 
 .nav-item {
-    list-style: none; 
+    list-style: none;
 }
 
 .nav-link {
     color: #fff;
-    font-size: 1.4rem;
-     text-decoration: none;
+    font-size: 1.6rem;
+    text-decoration: none;
+    padding-bottom: 0.25rem;
+    text-transform: capitalize;
+    border-bottom: 3px solid transparent; /* Transparent border by default */
+    transition: border-bottom 0.3s; /* Add smooth transition */
 }
 
 .nav-link:hover {
-    border-bottom: 3px solid #fff;
+    border-bottom: 3px solid rgb(255, 255, 255); /* highlight on hover */
+}
+
+.active {
+    border-bottom: 3px solid rgb(255, 255, 255); /* highlight on hover */
 }
 
 .cart-icon-container {
-    display: flex;
+    padding: 1rem;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
 }
 
 .cart-icon {
-    color:  #fff;
-    font-size: 1.75rem;
+    color: #fff;
+    font-size: 1.5rem;
+    vertical-align: bottom;
 }
 
+.cart-badge {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    color: black;
+    background-color: orange;
+    border-radius: 50%;
+    padding: 0.25em;
+    font-size: 1.25rem;
+    width: 2em; /* Set the width to the same value as height */
+    height: 2em; /* Set the height to the same value as width */
+    display: flex; /* Use flexbox to center content */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}

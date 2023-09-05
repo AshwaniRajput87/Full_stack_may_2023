@@ -1,0 +1,21 @@
+.product-item {
+    width: 35%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+}
+
+.product-image {
+    object-fit: contain;
+    object-position: center;
+    flex: 1;
+    height: 40%;
+    margin: 1rem;
+}
+
+.product-image img{
+    width: 300px;
+    height: 400px;
+}
