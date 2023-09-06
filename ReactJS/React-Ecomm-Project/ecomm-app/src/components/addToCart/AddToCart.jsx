@@ -6,18 +6,13 @@ const AddToCart = ({ product }) => {
 
     const {cart, addToCart, removeFromCart } = useCart();
 
-    // console.log(cart);
-
-    // console.log(addToCart(product));
-
-    // const itemInCart = cart[product.id];
-    // const qty = itemInCart ? itemInCart.quantity : 0;
     const itemInCart = cart[product.id];
     const qty = itemInCart ? itemInCart.quantity : 0;
 
     const handleRemoveFromCart = () => {
-        console.log('Remove from cart');
-        // removeFromCart(product);
+        removeFromCart(product.id);
+
+        console.log(product.id);
     }
 
     const handleAddtoCart = () => {
