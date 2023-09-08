@@ -1,4 +1,6 @@
 import './App.css';
+import UseCallbackConcept from './components/UseCallbackConcept';
+import UseMemoConcept from './components/UseMemoConcept';
 import UseRefConcept from './components/UseRefConcept';
 
 const App = () => {
@@ -6,7 +8,9 @@ const App = () => {
 
   return (
     <>
-      <UseRefConcept />
+      {/* <UseRefConcept /> */}
+      {/* <UseMemoConcept value={100}/> */}
+      <UseCallbackConcept />
     </>
   )
 }

@@ -13,12 +13,14 @@ const Counter = () => {
      
     return (
         <>
-
           <h2>Counter</h2>
            <div className='container'>
-                <button onClick={handleDecrement}>-</button>
+                <button data-test-id="counter-decrement-btn" onClick={handleDecrement}>-</button>
                 <p>{count}</p>
                 <button onClick={handleIncrement}>+</button>
+           </div>
+           <div>
+               Text
            </div>
         </>
     )
